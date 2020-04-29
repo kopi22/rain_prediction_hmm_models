@@ -23,7 +23,7 @@ export default class Model {
         console.log(this.filterEstimate)
     }
 
-    getPrediction(time) {
-        console.log(this.filterEstimate)
-    }
+    // getPrediction(time) {
+    //     console.log(this.filterEstimate)
+    // }
 }
