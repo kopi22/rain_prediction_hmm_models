@@ -27,12 +27,12 @@ const ControlPanel = props => {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button variant="contained" color="primary" onClick={props.handleNextState}>
                     Next state
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button variant="outlined" color="primary" onClick={props.handleReset}>
                     Reset
                   </Button>
                 </Grid>

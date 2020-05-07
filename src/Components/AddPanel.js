@@ -14,6 +14,7 @@ const useStyles = makeStyles({...panelStyles,
         alignItems: 'center', 
         justifyContent: 'center', 
         flexDirection: 'column',
+        minHeight: '200px'
     }
 })
 

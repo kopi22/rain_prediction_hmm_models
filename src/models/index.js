@@ -12,18 +12,19 @@ export default class Model {
         this.priors = priors
         this.transitionModel = transitionModel
         this.evidenceModel = evidenceModel
-        this.filterEstimate = priors
+        this.filterHistory = [priors]
         this.time = 0
     }
 
     filter = evidence => {
         const evidenceProb = this.evidenceModel[evidence]
-        this.filterEstimate = normalizeProbabilities(math.multiply(evidenceProb, math.transpose(this.transitionModel), this.filterEstimate))
+        this.filterHistory.push(normalizeProbabilities(math.multiply(evidenceProb, math.transpose(this.transitionModel), this.filterHistory[this.filterHistory.length - 1])))
         this.time++
-        console.log(this.filterEstimate)
+        // TODO: implement smoothing and MLE
     }
 
-    // getPrediction(time) {
-    //     console.log(this.filterEstimate)
-    // }
+    reset = () => {
+        const [priors, _] = this.filterHistory
+        this.filterHistory = [priors]
+    }
 }

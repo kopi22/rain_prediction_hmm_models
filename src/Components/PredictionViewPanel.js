@@ -27,7 +27,7 @@ const PredictionViewPanel = props => {
                 >
                     <CartesianGrid vertical={false} />
                     <XAxis dataKey="name" />
-                    <YAxis label={{ value: 'Probability of Rain [%]', angle: -90, position: 'insideLeft', style: {textAnchor: 'middle'} }}/>
+                    <YAxis domain={[0, 100]} label={{ value: 'Probability of Rain [%]', angle: -90, position: 'insideLeft', style: {textAnchor: 'middle'} }}/>
                     <Tooltip cursor={false}/>
                     <Legend />
                     <Bar dataKey="rain" fill="#8884d8" stackId="a" maxBarSize={10} unit='%'/>
